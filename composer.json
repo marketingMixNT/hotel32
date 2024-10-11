@@ -7,6 +7,8 @@
     "require": {
         "php": "^8.2",
         "awcodes/shout": "^2.0",
+        "codeat3/blade-iconpark": "^1.6",
+        "codeat3/blade-teeny-icons": "^1.10",
         "filament/filament": "^3.2",
         "filament/spatie-laravel-translatable-plugin": "^3.2",
         "joshembling/image-optimizer": "^1.4",

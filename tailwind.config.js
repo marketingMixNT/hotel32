@@ -9,24 +9,30 @@ export default {
             },
             colors: {
                 primary: {
-                    400: "#",
+                    400: "#013333",
                 },
                 secondary: {
-                    400: "#",
+                    400: "#d9b000",
                 },
                 accent: {
-                    400: "#",
+                    400: "#d9b000",
                 },
 
-                bgPrimary: "#",
-                bgSecondary: "#",
+                bgPrimary: "#ffffff",
+                bgSecondary: {
+                    200: "#F2F2F2",
+                    400: "#eeebe6",
+                    600: " #cbcbcb",
+                    800: " #555",
+                },
+                bgThird: "#eeebe6",
 
                 fontLight: "#ffffff",
-                fontDark: "#222",
+                fontDark: "#555555",
             },
             fontFamily: {
-                heading: ["Montserrat", "sans-serif"],
-                text: ["Montserrat", "sans-serif"],
+                heading: ["Poppins", "sans-serif"],
+                text: ["Poppins", "sans-serif"],
             },
         },
     },

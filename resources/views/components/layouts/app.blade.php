@@ -16,11 +16,13 @@
 
 
 
-<body class="overflow-x-hidden font-text bg-bgPrimary  ">
+<body class="font-text bg-bgPrimary text-fontDark overflow-x-hidden">
     @include('partials.gtm')
 
     <x-preloader />
-    <x-nav.navbar />
+    <x-header.header />
+    <x-header.header-secondary />
+    <x-header.mobile-menu />
 
 
 
@@ -29,6 +31,8 @@
     <x-map />
     <x-footer />
     <x-mobile-buttons />
+
+   <x-scroll-to-top />
 
   @include('partials.scripts')
 
