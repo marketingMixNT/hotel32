@@ -10,12 +10,11 @@ export default {
             colors: {
                 primary: {
                     400: "#013333",
-                },
-                secondary: {
-                    400: "#d9b000",
+                    600: "#012929",
                 },
                 accent: {
                     400: "#d9b000",
+                    600: "#b59100",
                 },
 
                 bgPrimary: "#ffffff",
