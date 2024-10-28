@@ -1,0 +1,16 @@
+created:
+    - database/factories/GalleryFactory.php
+    - database/migrations/2024_10_25_124526_create_galleries_table.php
+    - app/Models/Gallery.php
+models:
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
+    Home: { meta_title: json, meta_desc: json, title: json, logo: text, phone: text, phone_second: 'text nullable', phone_third: 'text nullable', mail: text, address: text, city: text, bank: 'text nullable', bank_account: 'text nullable', booking_link: json, booking_script: text, map: text, map_link: text, slider_title: json, slider_subtitle: json, slider_images: text, about_heading: json, about_text_first: json, about_text_second: json, about_images: text, rooms_heading: json, rooms_text: json, testimonials_heading: json, testimonials_text: json, attractions_heading: json, attractions_text: json, attractions_images: text, google_reviews: text, google_reviews_average: text, google_reviews_link: text, tripadvisor_reviews: text, tripadvisor_reviews_average: text, tripadvisor_reviews_link: text, relationships: { hasMany: socials } }
+    Room: { meta_title: 'json nullable', meta_desc: 'json nullable', title: 'json unique', slug: 'json unique', short_desc: json, desc: json, equipment: json, thumbnail: text, gallery: text, beds: 'text nullable', bathrooms: 'text nullable', reservation_link: 'text nullable', sort: 'integer nullable' }
+    Testimonial: { name: json, source: json, content: json, sort: 'integer nullable' }
+    LocalAttraction: { title: json, description: json, images: text, sort: 'integer nullable' }
+    Social: { name: text, link: text, relationships: { belongsTo: Home } }
+    PrivacyPolicy: { content: json }
+    Regulations: { content: json }
+    Feature: { icon: text, title: json, description: json, sort: 'integer nullable' }
+    Cta: { title: json, subtitle: json, image: text, link: 'text nullable' }
+    Gallery: { category: json, images: text, sort: 'integer nullable' }

@@ -14,20 +14,21 @@
         <nav>
             <ul class="flex flex-col justify-start items-start gap-5 pl-6">
                 <x-header.nav-item href="" activeRoute="">O nas</x-header.nav-item>
-                <x-header.nav-item href="/" activeRoute=''>Zarezerwuj</x-header.nav-item>
+                <x-header.nav-item href="/" activeRoute=''>Pokoje</x-header.nav-item>
 
 <x-header.dropdown-mobile>
-    <x-header.dropdown-mobile-item href="#" activeRoute='home'>element 1</x-header.dropdown-mobile-item>
-    <x-header.dropdown-mobile-item href="#" activeRoute=''>element 1</x-header.dropdown-mobile-item>
-    <x-header.dropdown-mobile-item href="#" activeRoute=''>element 1</x-header.dropdown-mobile-item>
-    <x-header.dropdown-mobile-item href="#" activeRoute=''>element 1</x-header.dropdown-mobile-item>
+    @foreach ($rooms as $room)
+    <x-header.dropdown-mobile-item href="#" activeRoute='home'>{{$room->title}}</x-header.dropdown-mobile-item>
+    @endforeach
+  
 
 </x-header.dropdown-mobile>
 
            
+                <x-header.nav-item href="/" activeRoute=''>Restauracja</x-header.nav-item>
+                <x-header.nav-item href="/" activeRoute=''>Transfery i wycieczki</x-header.nav-item>
                 <x-header.nav-item href="/" activeRoute=''>Galeria</x-header.nav-item>
-                <x-header.nav-item href="/" activeRoute=''>Dla inwestora</x-header.nav-item>
-                <x-header.nav-item href="/" activeRoute=''>Sale konferencyjne</x-header.nav-item>
+                <x-header.nav-item href="/" activeRoute=''>Lokalizacja</x-header.nav-item>
                 <x-header.nav-item href="/" activeRoute=''>Kontakt</x-header.nav-item>
             </ul>
         </nav>

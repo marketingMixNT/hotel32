@@ -1,7 +1,7 @@
-// import "./partials/footerYear";
+import "./partials/footerYear";
 import "./partials/lightbox";
 import "./partials/mobileButtons";
-// import "./partials/preloader";
+import "./partials/preloader";
 import "./partials/swiper";
 
 import './partials/mobileMenu'

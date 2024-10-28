@@ -1,0 +1,1 @@
+<script src="https://wis.upperbooking.com/hotel32krakowoldtown/booking?locale=pl" async></script>

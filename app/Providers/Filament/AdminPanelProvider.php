@@ -34,18 +34,19 @@ class AdminPanelProvider extends PanelProvider
         ->unsavedChangesAlerts()
         ->sidebarCollapsibleOnDesktop()
         ->favicon('/favicon/favicon.ico')
-        ->brandLogo('/assets/logo.svg')
-        ->brandLogoHeight(fn () => auth()->check() ? '40px' : '100px')
+        ->brandLogo('/assets/logo/logo-dark.png')
+        ->darkModeBrandLogo('/assets/logo/logo.png')
+        ->brandLogoHeight(fn() => auth()->check() ? '40px' : '100px')
         ->colors([
-            'primary' => Color::hex('#c18b52'),
+            'primary' => Color::hex('#013333'),
             'gray' => Color::Slate,
         ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\\Filament\\Admin\\Resources')
+            ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\\Filament\\Admin\\Pages')
             ->pages([
-                // Pages\Dashboard::class,
+                Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\\Filament\\Admin\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
@@ -64,14 +65,13 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(['pl', 'en']),);
-            ;
-            
+             ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(['pl', 'en']),);
     }
 
-    public function register(): void
+        public function register(): void
     {
         parent::register();
         FilamentView::registerRenderHook('panels::body.end', fn(): string => Blade::render("@vite('resources/js/app.js')"));
     }
+
 }
