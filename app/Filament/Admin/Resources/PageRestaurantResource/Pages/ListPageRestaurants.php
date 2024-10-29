@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Filament\Admin\Resources\PageAboutResource\Pages;
+namespace App\Filament\Admin\Resources\PageRestaurantResource\Pages;
 
 use Filament\Actions;
-use App\Models\PageAbout;
+use App\Models\PageRestaurant;
 use Filament\Resources\Pages\ListRecords;
-use App\Filament\Admin\Resources\PageAboutResource;
+use App\Filament\Admin\Resources\PageRestaurantResource;
 
-class ListPageAbouts extends ListRecords
+class ListPageRestaurants extends ListRecords
 {
     use ListRecords\Concerns\Translatable;
 
-    protected static string $resource = PageAboutResource::class;
+    protected static string $resource = PageRestaurantResource::class;
 
     protected function getHeaderActions(): array
     {
 
-        $pageExists = PageAbout::exists();
+        $pageExists = PageRestaurant::exists();
 
         return array_filter([
 

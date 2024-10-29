@@ -40,7 +40,7 @@ class PageAboutBlockResource extends Resource
                     ->label('Obraz')
                     ->directory('pageAbout')
                     ->getUploadedFileNameForStorageUsing(
-                        fn(TemporaryUploadedFile $file): string => 'pageAbout-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                        callback: fn(TemporaryUploadedFile $file): string => 'o-nas-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                     )
                     ->maxSize(8192)
                     ->columnSpanFull()
@@ -52,8 +52,7 @@ class PageAboutBlockResource extends Resource
                         'blockquote',
                         'strike',
                         'codeBlock',
-                        'h2',
-                        'h3',
+                        
 
                     ])
                     ->required()

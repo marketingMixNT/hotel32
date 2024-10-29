@@ -12,7 +12,7 @@
             </x-header.dropdown>
         </x-header.nav-item-dropdown>
 
-        <x-header.nav-item href="/" activeRoute=''>Restauracja</x-header.nav-item>
+        <x-header.nav-item href="{{route('restaurant')}}" activeRoute='restaurant'>Restauracja</x-header.nav-item>
         <x-header.nav-item href="/" activeRoute=''>Transfery i wycieczki</x-header.nav-item>
         <x-header.nav-item href="/" activeRoute=''>Galeria</x-header.nav-item>
         <x-header.nav-item href="/" activeRoute=''>Lokalizacja</x-header.nav-item>

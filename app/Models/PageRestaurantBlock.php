@@ -3,15 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
-use Spatie\Translatable\HasTranslations;
 
 
-class PageAboutBlock extends Model
+class PageRestaurantBlock extends Model
 {
     use HasTranslations;
 
@@ -26,7 +26,7 @@ class PageAboutBlock extends Model
         'image',
         'text',
         'sort',
-        'page_about_id',
+        'page_restaurant_id',
     ];
 
     /**
@@ -37,14 +37,13 @@ class PageAboutBlock extends Model
     protected $casts = [
         'id' => 'integer',
         'text' => 'array',
-        'page_about_id' => 'integer',
+        'page_restaurant_id' => 'integer',
     ];
 
-    public function pageAbout(): BelongsTo
+    public function pageRestaurant(): BelongsTo
     {
-        return $this->belongsTo(PageAbout::class);
+        return $this->belongsTo(PageRestaurant::class);
     }
-
     public static function getForm(): array
     {
         return [
@@ -52,7 +51,7 @@ class PageAboutBlock extends Model
                 ->label('Obraz')
                 ->directory('pageAbout')
                 ->getUploadedFileNameForStorageUsing(
-                    fn(TemporaryUploadedFile $file): string => 'o-nas-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                    fn(TemporaryUploadedFile $file): string => 'restauracja-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                 )
                 ->maxSize(8192)
                 ->columnSpanFull()
@@ -64,7 +63,7 @@ class PageAboutBlock extends Model
                     'blockquote',
                     'strike',
                     'codeBlock',
-                   
+                    
                     
                 ])
                 ->required()

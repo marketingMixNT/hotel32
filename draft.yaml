@@ -123,3 +123,19 @@ models:
     heading: json
     text: json
     banner: text
+
+  PageRestaurant:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    heading: json
+    banner: text
+    relationships:
+      hasMany: PageRestaurantBlock
+
+  PageRestaurantBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: PageRestaurant
