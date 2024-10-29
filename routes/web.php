@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TravelsController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\LocalizationController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -19,6 +20,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/restauracja', [RestaurantController::class,'index'])->name('restaurant');
     Route::get('/transfery-i-wycieczki', [TravelsController::class,'index'])->name('travels');
     Route::get('/galeria', [GalleryController::class,'index'])->name('gallery');
+    Route::get('/lokalizacja', [LocalizationController::class,'index'])->name('localization');
 
     
 });

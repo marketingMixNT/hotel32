@@ -15,7 +15,7 @@
         <x-header.nav-item href="{{route('restaurant')}}" activeRoute='restaurant'>Restauracja</x-header.nav-item>
         <x-header.nav-item href="{{route('travels')}}" activeRoute='travels'>Transfery i wycieczki</x-header.nav-item>
         <x-header.nav-item href="{{route('gallery')}}" activeRoute='gallery'>Galeria</x-header.nav-item>
-        <x-header.nav-item href="/" activeRoute=''>Lokalizacja</x-header.nav-item>
+        <x-header.nav-item href="{{route('localization')}}" activeRoute='localization'>Lokalizacja</x-header.nav-item>
         <x-header.nav-item href="/" activeRoute=''>Kontakt</x-header.nav-item>
     </ul>
 </nav>

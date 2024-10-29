@@ -1,5 +1,5 @@
 <div id="mobileMenu"
-    class="fixed top-0 bottom-0 right-0 left-0 sm:left-1/2  flex flex-col justify-between px-7 py-5  bg-bgSecondary-800  opacity-0 duration-300 ease-out z-50 translate-x-[100%]">
+    class="fixed top-0 bottom-0 right-0 left-0 sm:left-1/2  flex flex-col justify-between px-7 py-5  bg-bgSecondary-800  opacity-0 duration-300 ease-out z-50 translate-x-[100%]" style="z-index: 10000000000">
 
     <div class="flex flex-col gap-16">
 
@@ -13,8 +13,8 @@
 
         <nav>
             <ul class="flex flex-col justify-start items-start gap-5 pl-6">
-                <x-header.nav-item href="{{route('about')}}" activeRoute="">O nas</x-header.nav-item>
-                <x-header.nav-item href="/" activeRoute=''>Pokoje</x-header.nav-item>
+                <x-header.nav-item href="{{route('about')}}" activeRoute="about">O nas</x-header.nav-item>
+               
 
 <x-header.dropdown-mobile>
     @foreach ($rooms as $room)
@@ -28,7 +28,7 @@
                 <x-header.nav-item href="{{route('restaurant')}}" activeRoute='restaurant'>Restauracja</x-header.nav-item>
                 <x-header.nav-item href="{{route('travels')}}" activeRoute='travels'>Transfery i wycieczki</x-header.nav-item>
                 <x-header.nav-item href="{{route('gallery')}}" activeRoute='gallery'>Galeria</x-header.nav-item>
-                <x-header.nav-item href="/" activeRoute=''>Lokalizacja</x-header.nav-item>
+                <x-header.nav-item href="{{route('localization')}}" activeRoute='localization'>Lokalizacja</x-header.nav-item>
                 <x-header.nav-item href="/" activeRoute=''>Kontakt</x-header.nav-item>
             </ul>
         </nav>

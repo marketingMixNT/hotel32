@@ -4,8 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\PageLocalization;
 use App\Models\PageLocalizationBlock;
-use App\Models\PageRestaurant;
 
 class PageLocalizationBlockFactory extends Factory
 {
@@ -25,7 +25,7 @@ class PageLocalizationBlockFactory extends Factory
             'image' => $this->faker->text(),
             'text' => '{}',
             'sort' => $this->faker->numberBetween(-10000, 10000),
-            'page_restaurant_id' => PageRestaurant::factory(),
+            'page_localization_id' => PageLocalization::factory(),
         ];
     }
 }

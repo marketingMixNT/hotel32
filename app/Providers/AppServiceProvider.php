@@ -16,19 +16,23 @@ use App\Models\PageRestaurant;
 use App\Observers\CtaObserver;
 use App\Observers\HomeObserver;
 use App\Observers\RoomObserver;
+use App\Models\PageLocalization;
 use App\Models\PageTravelsBlock;
 use App\Observers\FeatureObserver;
 use App\Observers\GalleryObserver;
 use App\Models\PageRestaurantBlock;
 use App\Observers\PageAboutObserver;
 use App\Observers\PageRoomsObserver;
+use App\Models\PageLocalizationBlock;
 use App\Observers\PageGalleryObserver;
 use App\Observers\PageTravelsObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\PageAboutBlockObserver;
 use App\Observers\PageRestaurantObserver;
+use App\Observers\PageLocalizationObserver;
 use App\Observers\PageTravelsBlockObserver;
 use App\Observers\PageRestaurantBlockObserver;
+use App\Observers\PageLocalizationBlockObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -63,5 +67,8 @@ class AppServiceProvider extends ServiceProvider
 
         PageGallery::observe(PageGalleryObserver::class);
         Gallery::observe(GalleryObserver::class);
+
+        PageLocalization::observe(PageLocalizationObserver::class);
+        PageLocalizationBlock::observe(PageLocalizationBlockObserver::class);
     }
 }

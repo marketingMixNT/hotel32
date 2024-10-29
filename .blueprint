@@ -1,7 +1,10 @@
 created:
-    - database/factories/PageGalleryFactory.php
-    - database/migrations/2024_10_29_123123_create_page_galleries_table.php
-    - app/Models/PageGallery.php
+    - database/factories/PageLocalizationFactory.php
+    - database/factories/PageLocalizationBlockFactory.php
+    - database/migrations/2024_10_29_125727_create_page_localizations_table.php
+    - database/migrations/2024_10_29_125728_create_page_localization_blocks_table.php
+    - app/Models/PageLocalization.php
+    - app/Models/PageLocalizationBlock.php
 models:
     User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
     Home: { meta_title: json, meta_desc: json, title: json, logo: text, phone: text, phone_second: 'text nullable', phone_third: 'text nullable', mail: text, city: text, address: text, bank: 'text nullable', bank_account: 'text nullable', booking_link: json, booking_script: text, map: text, map_link: text, slider_title: json, slider_subtitle: json, slider_images: text, rooms_heading: json, rooms_text: json, about_text_first: json, about_image_first: text, about_text_second: 'json nullable', about_image_second: 'text nullable', restaurant_text_first: json, restaurant_image_first: text, restaurant_text_second: 'json nullable', restaurant_image_second: 'text nullable', testimonials_heading: json, testimonials_text: json, google_reviews: 'text nullable', google_reviews_average: 'text nullable', google_reviews_link: 'text nullable', tripadvisor_reviews: 'text nullable', tripadvisor_reviews_average: 'text nullable', tripadvisor_reviews_link: 'text nullable', travel_heading: json, travel_text: json, travel_images: text, relationships: { hasMany: social } }
@@ -21,6 +24,6 @@ models:
     PageRestaurantBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: PageRestaurant } }
     PageTravels: { meta_title: json, meta_desc: json, header_heading: json, heading: json, banner: text, relationships: { hasMany: PageTravelsBlock } }
     PageTravelsBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: PageTravels } }
-    PageLocalization: { meta_title: json, meta_desc: json, header_heading: json, heading: json, banner: text, relationships: { hasMany: PageRestaurantBlock } }
-    PageLocalizationBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: PageRestaurant } }
+    PageLocalization: { meta_title: json, meta_desc: json, header_heading: json, heading: json, banner: text, relationships: { hasMany: PageLocalizationBlock } }
+    PageLocalizationBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: PageLocalization } }
     PageGallery: { meta_title: json, meta_desc: json, header_heading: json, heading: json, banner: text }

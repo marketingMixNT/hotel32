@@ -161,3 +161,19 @@ models:
     meta_desc: json
     header_heading: json
     banner: text
+
+  PageLocalization:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    heading: json
+    banner: text
+    relationships:
+      hasMany: PageLocalizationBlock
+
+  PageLocalizationBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: PageLocalization
