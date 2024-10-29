@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth ">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth scroll-p-10 ">
 
 <head>
     @include('partials.meta')

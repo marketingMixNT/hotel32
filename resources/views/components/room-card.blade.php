@@ -25,7 +25,7 @@
 
                 <x-lucide-shower-head class="size-6 text-accent-400" />
 
-                <span class="font-light">{{$room->bathroom}}</span>
+                <span class="font-light">{{$room->bathrooms}}</span>
 
             </div>
 

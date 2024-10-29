@@ -21,6 +21,7 @@ class PrivacyPolicyFactory extends Factory
     public function definition(): array
     {
         return [
+            'banner' => $this->faker->text(),
             'content' => '{}',
         ];
     }

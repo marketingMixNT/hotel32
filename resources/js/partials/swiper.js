@@ -23,7 +23,7 @@ new Swiper(".hero-carousel", {
 });
 
 //TESTIMONIALS CAROUSEL
-new Swiper(".testimonial-carousel", {
+new Swiper(".testimonials-carousel", {
     loop: true,
     grabCursor: true,
     slidesPerView: 1,
@@ -34,5 +34,5 @@ new Swiper(".testimonial-carousel", {
         pauseOnMouseEnter: true,
     },
 
-    modules: [Autoplay, Navigation, Pagination],
+    modules: [Autoplay,],
 });

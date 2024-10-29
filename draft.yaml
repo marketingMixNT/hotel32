@@ -1,6 +1,6 @@
 models:
   Home:
-    meta_title: json 
+    meta_title: json
     meta_desc: json
     title: json
     logo: text
@@ -8,8 +8,8 @@ models:
     phone_second: text nullable
     phone_third: text nullable
     mail: text
-    address: text
     city: text
+    address: text
     bank: text nullable
     bank_account: text nullable
     booking_link: json
@@ -55,7 +55,6 @@ models:
     gallery: text
     beds: text nullable
     bathrooms: text nullable
-    reservation_link: text nullable
     sort: integer nullable
 
   Testimonial:

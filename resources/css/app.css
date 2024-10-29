@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 
+/* links hover */
+.link-hover {
+    @apply relative w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-accent-400  after:w-[75%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left;
+}
+/* .link-hover--dark {
+    @apply relative w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-secondary-400  after:w-[75%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left;
+}
+.link-hover--accent {
+    @apply relative w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-accent-100  after:w-[75%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left;
+} */
+
 .active{
     color:#d9b000
 }

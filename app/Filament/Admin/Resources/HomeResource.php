@@ -78,6 +78,7 @@ class HomeResource extends Resource
                                 Forms\Components\TextInput::make('bank_account')
                                     ->label('Numer konta bankowego'),
 
+
                                 Fieldset::make('Rezerwacja')
                                     ->schema([
                                         Forms\Components\TextInput::make('booking_link')
@@ -110,9 +111,8 @@ class HomeResource extends Resource
                                             ->label('Google Maps iFrame')
                                             ->placeholder("<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.547169189393!2d20.00688517730142!3d49.474170357174515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715e5905e21c0ed%3A0x159c133ae9b83572!2sMarketingMix!5e0!3m2!1spl!2spl!4v1727760651042!5m2!1spl!2spl' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade' title='apartament-willa' class='w-full'></iframe>")
                                             ->autosize()
-
-
-                                            ->columnSpanFull(),
+                                            ->columnSpanFull()
+                                            ->required(),
 
 
 
@@ -157,7 +157,7 @@ class HomeResource extends Resource
                                     ->minLength(3)
                                     ->maxLength(255),
                                 Forms\Components\TextInput::make('phone_third')
-                                    ->label('Drugi Telefon')
+                                    ->label('Trzeci Telefon')
                                     ->prefix("+48")
                                     ->placeholder("123456789")
                                     ->minLength(3)
@@ -216,7 +216,7 @@ class HomeResource extends Resource
                                     ->schema([
                                         Forms\Components\FileUpload::make(name: 'slider_images')
                                             ->label('Zdjęcia')
-                                            ->directory('hotel-slides')
+                                            ->directory('home')
                                             ->getUploadedFileNameForStorageUsing(
                                                 fn(TemporaryUploadedFile $file): string => 'slide-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                                             )
@@ -270,6 +270,7 @@ class HomeResource extends Resource
                                             ->required()
                                             ->columnSpanFull(),
                                     ]),
+
                                 //about
                                 Section::make('O nas')
                                     ->collapsed()
@@ -279,28 +280,24 @@ class HomeResource extends Resource
                                             ->schema([
                                                 Forms\Components\RichEditor::make('about_text_first')
                                                     ->label('Paragraf')
-                                                    ->toolbarButtons([
-                                                        'bold',
-                                                        'italic',
-                                                        'underline',
-                                                        'bulletList',
-                                                    ])
+                                                    
                                                     ->required()
                                                     ->columnSpanFull(),
-
                                                 Forms\Components\FileUpload::make(name: 'about_image_first')
                                                     ->label('Zdjęcie')
-                                                    ->directory('home-about')
+                                                    ->directory('home')
                                                     ->getUploadedFileNameForStorageUsing(
-                                                        fn(TemporaryUploadedFile $file): string => 'hotel32-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                                                        fn(TemporaryUploadedFile $file): string => 'o-nas-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                                                     )
-                                                    ->multiple()
+
                                                     ->appendFiles()
                                                     ->image()
                                                     ->reorderable()
+
                                                     ->maxSize(8192)
                                                     ->optimize('webp')
                                                     ->imageEditor()
+
                                                     ->imageEditorAspectRatios([
                                                         null,
                                                         '16:9',
@@ -309,34 +306,30 @@ class HomeResource extends Resource
                                                     ])
                                                     ->required()
                                                     ->columnSpanFull(),
-
                                             ]),
+
                                         Fieldset::make('Blok 2')
                                             ->schema([
                                                 Forms\Components\RichEditor::make('about_text_second')
                                                     ->label('Paragraf')
-                                                    ->toolbarButtons([
-                                                        'bold',
-                                                        'italic',
-                                                        'underline',
-                                                        'bulletList',
-                                                    ])
+                                                   
                                                     ->required()
                                                     ->columnSpanFull(),
-
                                                 Forms\Components\FileUpload::make(name: 'about_image_second')
                                                     ->label('Zdjęcie')
-                                                    ->directory('home-about')
+                                                    ->directory('home')
                                                     ->getUploadedFileNameForStorageUsing(
-                                                        fn(TemporaryUploadedFile $file): string => 'hotel32-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                                                        fn(TemporaryUploadedFile $file): string => 'o-nas-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                                                     )
-                                                    ->multiple()
+
                                                     ->appendFiles()
                                                     ->image()
                                                     ->reorderable()
+
                                                     ->maxSize(8192)
                                                     ->optimize('webp')
                                                     ->imageEditor()
+
                                                     ->imageEditorAspectRatios([
                                                         null,
                                                         '16:9',
@@ -345,13 +338,11 @@ class HomeResource extends Resource
                                                     ])
                                                     ->required()
                                                     ->columnSpanFull(),
-
                                             ]),
 
 
-
-
                                     ]),
+
                                 //restaurant
                                 Section::make('Restauracja')
                                     ->collapsed()
@@ -359,30 +350,26 @@ class HomeResource extends Resource
 
                                         Fieldset::make('Blok 1')
                                             ->schema([
-                                                Forms\Components\RichEditor::make('about_restaurant_first')
+                                                Forms\Components\RichEditor::make('restaurant_text_first')
                                                     ->label('Paragraf')
-                                                    ->toolbarButtons([
-                                                        'bold',
-                                                        'italic',
-                                                        'underline',
-                                                        'bulletList',
-                                                    ])
                                                     ->required()
                                                     ->columnSpanFull(),
 
-                                                Forms\Components\FileUpload::make(name: 'about_restaurant_first')
+                                                Forms\Components\FileUpload::make(name: 'restaurant_image_first')
                                                     ->label('Zdjęcie')
-                                                    ->directory('home-restaurant')
+                                                    ->directory('home')
                                                     ->getUploadedFileNameForStorageUsing(
-                                                        fn(TemporaryUploadedFile $file): string => 'hotel32-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                                                        fn(TemporaryUploadedFile $file): string => 'restauracja-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                                                     )
-                                                    ->multiple()
+
                                                     ->appendFiles()
                                                     ->image()
                                                     ->reorderable()
+
                                                     ->maxSize(8192)
                                                     ->optimize('webp')
                                                     ->imageEditor()
+
                                                     ->imageEditorAspectRatios([
                                                         null,
                                                         '16:9',
@@ -391,49 +378,45 @@ class HomeResource extends Resource
                                                     ])
                                                     ->required()
                                                     ->columnSpanFull(),
-
                                             ]),
+
                                         Fieldset::make('Blok 2')
                                             ->schema([
-                                                Forms\Components\RichEditor::make('about_restaurant_second')
+                                                Forms\Components\RichEditor::make('restaurant_text_second')
                                                     ->label('Paragraf')
-                                                    ->toolbarButtons([
-                                                        'bold',
-                                                        'italic',
-                                                        'underline',
-                                                        'bulletList',
-                                                    ])
                                                     ->required()
                                                     ->columnSpanFull(),
-
-                                                Forms\Components\FileUpload::make(name: 'about_restaurant_second')
-                                                    ->label('Zdjęcie')
-                                                    ->directory('home-restaurant')
-                                                    ->getUploadedFileNameForStorageUsing(
-                                                        fn(TemporaryUploadedFile $file): string => 'hotel32-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
-                                                    )
-                                                    ->multiple()
-                                                    ->appendFiles()
-                                                    ->image()
-                                                    ->reorderable()
-                                                    ->maxSize(8192)
-                                                    ->optimize('webp')
-                                                    ->imageEditor()
-                                                    ->imageEditorAspectRatios([
-                                                        null,
-                                                        '16:9',
-                                                        '4:3',
-                                                        '1:1',
-                                                    ])
-                                                    ->required()
-                                                    ->columnSpanFull(),
-
                                             ]),
 
 
+                                        Forms\Components\FileUpload::make(name: 'restaurant_image_second')
+                                            ->label('Zdjęcie')
+                                            ->directory('home')
+                                            ->getUploadedFileNameForStorageUsing(
+                                                fn(TemporaryUploadedFile $file): string => 'restauracja' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                                            )
 
+                                            ->appendFiles()
+                                            ->image()
+                                            ->reorderable()
+
+                                            ->maxSize(8192)
+                                            ->optimize('webp')
+                                            ->imageEditor()
+
+                                            ->imageEditorAspectRatios([
+                                                null,
+                                                '16:9',
+                                                '4:3',
+                                                '1:1',
+                                            ])
+                                            ->required()
+                                            ->columnSpanFull(),
 
                                     ]),
+
+                                
+
                                 // testimonials
                                 Section::make('Opinie')
                                     ->collapsed()
@@ -512,6 +495,7 @@ class HomeResource extends Resource
 
 
                                     ]),
+
                                 //travel
                                 Section::make('Podróże i transfery ')
                                     ->collapsed()
@@ -539,9 +523,9 @@ class HomeResource extends Resource
                                             ->schema([
                                                 Forms\Components\FileUpload::make(name: 'travel_images')
                                                     ->label('Zdjęcia')
-                                                    ->directory('home-travel')
+                                                    ->directory('home')
                                                     ->getUploadedFileNameForStorageUsing(
-                                                        fn(TemporaryUploadedFile $file): string => 'attractions-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                                                        fn(TemporaryUploadedFile $file): string => 'podroze-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                                                     )
                                                     ->multiple()
                                                     ->appendFiles()

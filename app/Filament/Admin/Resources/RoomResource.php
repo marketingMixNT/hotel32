@@ -11,6 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Awcodes\Shout\Components\Shout;
+use Filament\Forms\Components\Tabs;
 use Livewire\Component as Livewire;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Component;
@@ -41,51 +42,17 @@ class RoomResource extends Resource
     {
         return $form
         ->schema([
-            Section::make('SEO')
-                ->icon('heroicon-o-globe-alt')
-                ->collapsible()
-                ->collapsed()
-                ->description('Wprowadź meta title oraz meta description , które informują użytkowników o treści strony.')
-                ->schema([
-                    Shout::make('info')
-                        ->content('Tytuł oraz opis zostaną uzupełnione automatycznie jezeli ich nie podasz. Zachecamy jednak do zrobienia tego w celu lepszej optymalizacji')
-                        ->type('info')
-                        ->color('success'),
 
-                    TextInput::make('meta_title')
-                        ->label('Tytuł Meta')
-                        ->placeholder('Meta title to tytuł strony internetowej wyświetlany w wynikach wyszukiwarek i na kartach przeglądarki.')
-                        ->characterLimit(60)
-                        ->minLength(10)
-                        ->maxLength(75)
-                        ->live(debounce: 1000)
-                        ->afterStateUpdated(function (Livewire $livewire, Component $component) {
-                            $validate = $livewire->validateOnly($component->getStatePath());
-                        })
-                        ->columnSpanFull(),
+            Tabs::make('Tabs')
+            ->columnSpanFull()
+            ->tabs([
 
-                    TextInput::make('meta_desc')
-                        ->label('Opis Meta')
-                        ->placeholder('Meta description to krótki opis strony internetowej wyświetlany w wynikach wyszukiwarek.')
-                        ->characterLimit(160)
-                        ->minLength(10)
-                        ->maxLength(180)
-                        ->live(debounce: 1000)
-                        ->afterStateUpdated(function (Livewire $livewire, Component $component) {
-                            $validate = $livewire->validateOnly($component->getStatePath());
-                        })
-                        ->columnSpanFull(),
-                ]),
-
-            Section::make('Główne informacje')
-                ->icon('heroicon-o-information-circle')
-                ->columns(2)
-                ->collapsible()
-                ->collapsed()
-                ->description('Podaj nazwę apartamentu, dodaj opis oraz wyposażenie')
-                ->schema([
-
-                    Forms\Components\TextInput::make('title')
+                    // MAIN INFO
+                    Tabs\Tab::make('Główne informacje')
+                    ->icon('heroicon-o-information-circle')
+                    ->columns()
+                    ->schema([
+                        Forms\Components\TextInput::make('title')
                         ->label('Nazwa Apartamentu')
                         ->unique(ignoreRecord: true)
                         ->minLength(3)
@@ -112,7 +79,17 @@ class RoomResource extends Resource
                         ->placeholder('np. 1 łazienka')
                         ->columns(1),
 
-                    RichEditor::make('short_desc')
+                   
+
+                        
+                    ]),
+
+                    // DESC
+                    Tabs\Tab::make('Opisy')
+                    ->icon('heroicon-o-pencil-square')
+                    ->columns()
+                    ->schema([
+                        RichEditor::make('short_desc')
                         ->label('Krótki opis')
                         ->toolbarButtons([
                             'bold',
@@ -147,17 +124,14 @@ class RoomResource extends Resource
                         ])
                         ->required()
                         ->columnSpanFull(),
-                ]),
+                    ]),
 
-            Section::make('Zdjęcia')
-                ->icon('heroicon-o-information-circle')
-                ->columns(1)
-                ->collapsible()
-                ->collapsed()
-                ->description('Dodaj miniaturkę oraz zdjęcia go galerii')
-                ->schema([
-
-                    Forms\Components\FileUpload::make('thumbnail')
+                    // PHOTOS
+                    Tabs\Tab::make('Zdjęcia')
+                    ->icon('heroicon-o-photo')
+                    ->columns()
+                    ->schema([
+                        Forms\Components\FileUpload::make('thumbnail')
                         ->label('Miniaturka')
                         ->directory('apartments-thumbnails')
                         ->getUploadedFileNameForStorageUsing(
@@ -201,16 +175,44 @@ class RoomResource extends Resource
                         ->required()
 
                         ->columnSpanFull(),
+                    ]),
 
-                ]),
+                    // META
+                    Tabs\Tab::make('Meta')
+                    ->icon('heroicon-o-globe-alt')
+                    ->columns()
+                    ->schema([ Shout::make('info')
+                    ->content('Tytuł oraz opis zostaną uzupełnione automatycznie jezeli ich nie podasz. Zachecamy jednak do zrobienia tego w celu lepszej optymalizacji')
+                    ->type('info')
+                    ->color('success')
+                    ->columnSpanFull(),
 
-            Forms\Components\TextInput::make('reservation_link')
-                ->label('Link do rezerwacji')
-                ->hint('Link do rezerwacji jest inny w wersji angielskiej!')
-                ->placeholder('Podaj link z panelu rezerwacyjnego')
-                ->required()
-                ->url()
-                ->columns(1),
+                TextInput::make('meta_title')
+                    ->label('Tytuł Meta')
+                    ->placeholder('Meta title to tytuł strony internetowej wyświetlany w wynikach wyszukiwarek i na kartach przeglądarki.')
+                    ->characterLimit(60)
+                    ->minLength(10)
+                    ->maxLength(75)
+                    ->live(debounce: 1000)
+                    ->afterStateUpdated(function (Livewire $livewire, Component $component) {
+                        $validate = $livewire->validateOnly($component->getStatePath());
+                    })
+                    ->columnSpanFull(),
+
+                TextInput::make('meta_desc')
+                    ->label('Opis Meta')
+                    ->placeholder('Meta description to krótki opis strony internetowej wyświetlany w wynikach wyszukiwarek.')
+                    ->characterLimit(160)
+                    ->minLength(10)
+                    ->maxLength(180)
+                    ->live(debounce: 1000)
+                    ->afterStateUpdated(function (Livewire $livewire, Component $component) {
+                        $validate = $livewire->validateOnly($component->getStatePath());
+                    })
+                    ->columnSpanFull(),])
+
+            ]),
+
 
         ]);
     }

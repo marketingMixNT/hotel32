@@ -24,7 +24,6 @@ return new class extends Migration
             $table->text('gallery');
             $table->text('beds')->nullable();
             $table->text('bathrooms')->nullable();
-            $table->text('reservation_link')->nullable();
             $table->integer('sort')->nullable();
             $table->timestamps();
         });

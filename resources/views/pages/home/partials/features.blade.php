@@ -1,6 +1,6 @@
 <section class="py-16 bg-[#f2f2f2]">
-    <x-container class="max-w-screen-xl">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-16 md:w-[75%] lg:w-full mx-auto">
+    <x-container class="max-w-screen-2xl">
+        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-5 gap-16 md:w-[75%] lg:w-full mx-auto">
 
             @foreach ($features as $feature)
 

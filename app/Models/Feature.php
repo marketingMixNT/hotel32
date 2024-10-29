@@ -10,7 +10,7 @@ use Spatie\Translatable\HasTranslations;
 class Feature extends Model
 {
     use HasTranslations;
-    
+
     use HasFactory;
 
     /**
@@ -35,7 +35,6 @@ class Feature extends Model
         'title' => 'array',
         'description' => 'array',
     ];
-
     public $translatable = ['title', 'description'];
 
 }

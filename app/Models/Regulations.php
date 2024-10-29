@@ -15,6 +15,7 @@ class Regulations extends Model
      * @var array
      */
     protected $fillable = [
+        'banner',
         'content',
     ];
 

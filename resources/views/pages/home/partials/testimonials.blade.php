@@ -1,4 +1,4 @@
-<section class="pt-20 pb-8 ">
+<section class="py-12 lg:pt-20 pb-8 ">
 
     <x-container class="max-w-screen-xl mx-auto space-y-20">
 
@@ -11,7 +11,7 @@
                 source="google" 
                 rate="{{ $home->google_reviews_average }}" 
                 href="{{ $home->reviews_links  }}" 
-                reviews="{{ $home->google_reviews }} {{ __('home.testimonials.reviews') }}" 
+                reviews="{{ $home->google_reviews }} {{ __('global.reviews') }}" 
             />
         @endif
 
@@ -24,7 +24,7 @@
         </x-heading-horizontal>
 
 
-        <div class="swiper testimonial-carousel max-w-screen-md">
+        <div class="swiper testimonials-carousel max-w-screen-md">
             <div class="swiper-wrapper ">
                 @foreach ($testimonials as $testimonial)
                 <x-testimonial-card :testimonial="$testimonial" />

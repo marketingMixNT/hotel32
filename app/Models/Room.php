@@ -57,7 +57,7 @@ class Room extends Model
         'title',
         'slug',
         'beds',
-        'bathrooms',
+        'bathroom',
         'short_desc',
         'desc',
         'equipment',

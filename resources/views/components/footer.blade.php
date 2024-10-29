@@ -18,11 +18,14 @@
                     <h2 class="font-heading text-lg uppercase mb-2 font-light">
                        {{__('footer.call-to-us')}}
                     </h2>
-                    <div class="space-y-2">
+                    <div class=" flex flex-col gap-2">
 
-                        <a href="tel:+48{{$home->phone}}" class="font-thin font-heading link-hover text-sm">{{$home->phone}}</a>
+                        <a href="tel:+48{{$home->phone}}" class="font-thin font-heading link-hover text-sm">+48 {{$home->phone}}</a>
                         @if($home->phone_second)
-                        <a href="tel:+48{{$home->phone_second}}" class="font-thin font-heading link-hover text-sm">{{$home->phone_second}}</a>
+                        <a href="tel:+48{{$home->phone_second}}" class="font-thin font-heading link-hover text-sm">+48 {{$home->phone_second}}</a>
+                        @endif
+                        @if($home->phone_third)
+                        <a href="tel:+48{{$home->phone_third}}" class="font-thin font-heading link-hover text-sm">+48 {{$home->phone_third}}</a>
                         @endif
                     </div>
                 </div>
@@ -78,7 +81,7 @@
 
             <div>
                 <a href="https://marketingmix.pl" target="_blank" class="flex justify-center items-center" aria-label="Agencja MarketingMix"><img
-                        src="{{ asset('/assets/marketingmix-logo.svg') }}" class="w-32 hover:scale-105 duration-300"
+                        src="{{ asset('/assets/marketingmix-logo--light.svg') }}" class="w-32 hover:scale-105 duration-300"
                         alt="logo wykonawcy - agencja MarketingMix" width="128" height="20"/></a>
             </div>
         </div>

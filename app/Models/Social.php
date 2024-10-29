@@ -67,6 +67,5 @@ class Social extends Model
                 ->placeholder('https://www.instagram.com/marketingmix_pl/'),
 
                
-        ];
-    }
+        ];}
 }

@@ -1,4 +1,4 @@
-<div class="swiper hero-carousel relative w-full h-[90vh]  md:h-screen ">
+<div class="relative swiper hero-carousel  w-full h-[90vh]  md:h-screen ">
     <div class="swiper-wrapper">
         {{-- HEADING --}}
 
@@ -29,13 +29,12 @@
 
 
         {{-- RESERVATION PANEL --}}
-        <div id="wis2-panel"
-            class="js-wis2-panel    bg-white z-50 absolute">
-        </div>
+         
+        <div id="wis2-panel" class="js-wis2-panel" style="bottom: 120px"><div class="wis2-panel wis2-panel--horizontal">								<div class="wis2-el wis2-button-hld">	<a href="#" class="wis2-button wis2-button--primary js-wis2-open-booking" id="wis2-open-booking">Sprawdź termin</a></div>										<div class="js-wis2-mixpicker" id="wis2-mixpicker" data-checkin="2024-10-29" data-checkout="2024-10-30"></div><div class="wis2-el wis2-input-group">	<div class="wis2-label">Przyjazd</div>	<div class="wis2-input wis2-input--icon mixpicker-trigger js-wis2-checkin" id="wis2-checkin">29 paź 2024</div></div><div class="wis2-el wis2-input-group">	<div class="wis2-label">Wyjazd</div>	<div class="wis2-input wis2-input--icon mixpicker-trigger js-wis2-checkout" id="wis2-checkout">30 paź 2024</div></div>			</div></div>
     
 
         {{-- ANCHOR --}}
-        <a href="#o-nas" class="absolute bottom-3  left-1/2 transform -translate-x-1/2 z-50"
+        <a href="#pokoje" class="absolute bottom-3  left-1/2 transform -translate-x-1/2 z-50"
             aria-label="Przejdź do sekcji o nas">
 
             <x-lucide-chevron-down class="animate-pulse w-6  text-white" />
