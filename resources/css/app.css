@@ -19,6 +19,11 @@
 }
 
 
+.gallery-btn {
+  @apply bg-accent-400 text-fontDark;
+}
+
+
 @layer utilities {
     .clip-path-circle-0 {
       clip-path: circle(0% at 100% 100%);

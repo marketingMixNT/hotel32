@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TravelsController;
+use App\Http\Controllers\RestaurantController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -17,6 +18,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/pokoj/{slug}', [RoomController::class,'show'])->name('room.show');
     Route::get('/restauracja', [RestaurantController::class,'index'])->name('restaurant');
     Route::get('/transfery-i-wycieczki', [TravelsController::class,'index'])->name('travels');
+    Route::get('/galeria', [GalleryController::class,'index'])->name('gallery');
 
     
 });

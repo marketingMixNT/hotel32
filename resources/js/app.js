@@ -1,4 +1,5 @@
 import "./partials/footerYear";
+import "./partials/gallery"
 import "./partials/lightbox";
 import "./partials/mobileButtons";
 import "./partials/preloader";

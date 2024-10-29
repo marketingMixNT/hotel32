@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-
-class Gallery extends Model
-{
-    use HasTranslations;
+class PageGallery extends Model
+{    use HasTranslations;
 
     use HasFactory;
 
@@ -19,9 +17,10 @@ class Gallery extends Model
      * @var array
      */
     protected $fillable = [
-        'category',
-        'images',
-        'sort',
+        'meta_title',
+        'meta_desc',
+        'header_heading',
+        'banner',
     ];
 
     /**
@@ -31,9 +30,14 @@ class Gallery extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'category' => 'array',
-        'images' => 'array',
+        'meta_title' => 'array',
+        'meta_desc' => 'array',
+        'header_heading' => 'array',
     ];
 
-    public $translatable = ['category'];
+    public $translatable = [
+        'meta_title',
+        'meta_desc',
+        'header_heading',
+    ];
 }
