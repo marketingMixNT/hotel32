@@ -1,7 +1,7 @@
 <nav>
     <ul class="flex justify-center items-center gap-10">
 
-        <x-header.nav-item href="" activeRoute="">O nas</x-header.nav-item>
+        <x-header.nav-item href="{{route('about')}}" activeRoute="">O nas</x-header.nav-item>
         {{-- dropddown --}}
         <x-header.nav-item-dropdown href="" activeRoute="" title="Nasze Pokoje">
             <x-header.dropdown>

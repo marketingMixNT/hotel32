@@ -13,7 +13,7 @@
 
         <nav>
             <ul class="flex flex-col justify-start items-start gap-5 pl-6">
-                <x-header.nav-item href="" activeRoute="">O nas</x-header.nav-item>
+                <x-header.nav-item href="{{route('about')}}" activeRoute="">O nas</x-header.nav-item>
                 <x-header.nav-item href="/" activeRoute=''>Pokoje</x-header.nav-item>
 
 <x-header.dropdown-mobile>

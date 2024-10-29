@@ -1,34 +1,13 @@
 created:
-    - database/factories/HomeFactory.php
-    - database/factories/RoomFactory.php
-    - database/factories/TestimonialFactory.php
-    - database/factories/LocalAttractionFactory.php
-    - database/factories/SocialFactory.php
-    - database/factories/PrivacyPolicyFactory.php
-    - database/factories/RegulationsFactory.php
-    - database/factories/FeatureFactory.php
-    - database/factories/CtaFactory.php
-    - database/factories/GalleryFactory.php
-    - database/migrations/2024_10_28_091621_create_homes_table.php
-    - database/migrations/2024_10_28_091622_create_rooms_table.php
-    - database/migrations/2024_10_28_091623_create_testimonials_table.php
-    - database/migrations/2024_10_28_091624_create_local_attractions_table.php
-    - database/migrations/2024_10_28_091625_create_socials_table.php
-    - database/migrations/2024_10_28_091626_create_privacy_policies_table.php
-    - database/migrations/2024_10_28_091627_create_regulations_table.php
-    - database/migrations/2024_10_28_091628_create_features_table.php
-    - database/migrations/2024_10_28_091629_create_ctas_table.php
-    - database/migrations/2024_10_28_091630_create_galleries_table.php
-    - app/Models/Home.php
-    - app/Models/Room.php
-    - app/Models/Testimonial.php
-    - app/Models/LocalAttraction.php
-    - app/Models/Social.php
-    - app/Models/PrivacyPolicy.php
-    - app/Models/Regulations.php
-    - app/Models/Feature.php
-    - app/Models/Cta.php
-    - app/Models/Gallery.php
+    - database/factories/PageAboutFactory.php
+    - database/factories/PageAboutBlockFactory.php
+    - database/factories/PageRoomsFactory.php
+    - database/migrations/2024_10_29_081435_create_page_abouts_table.php
+    - database/migrations/2024_10_29_081436_create_page_about_blocks_table.php
+    - database/migrations/2024_10_29_081437_create_page_rooms_table.php
+    - app/Models/PageAbout.php
+    - app/Models/PageAboutBlock.php
+    - app/Models/PageRooms.php
 models:
     User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
     Home: { meta_title: json, meta_desc: json, title: json, logo: text, phone: text, phone_second: 'text nullable', phone_third: 'text nullable', mail: text, city: text, address: text, bank: 'text nullable', bank_account: 'text nullable', booking_link: json, booking_script: text, map: text, map_link: text, slider_title: json, slider_subtitle: json, slider_images: text, rooms_heading: json, rooms_text: json, about_text_first: json, about_image_first: text, about_text_second: 'json nullable', about_image_second: 'text nullable', restaurant_text_first: json, restaurant_image_first: text, restaurant_text_second: 'json nullable', restaurant_image_second: 'text nullable', testimonials_heading: json, testimonials_text: json, google_reviews: 'text nullable', google_reviews_average: 'text nullable', google_reviews_link: 'text nullable', tripadvisor_reviews: 'text nullable', tripadvisor_reviews_average: 'text nullable', tripadvisor_reviews_link: 'text nullable', travel_heading: json, travel_text: json, travel_images: text, relationships: { hasMany: social } }
@@ -41,3 +20,6 @@ models:
     Feature: { icon: text, title: json, description: json, sort: 'integer nullable' }
     Cta: { title: json, subtitle: json, image: text, link: 'text nullable' }
     Gallery: { category: json, images: text, sort: 'integer nullable' }
+    PageAbout: { meta_title: json, meta_desc: json, header_heading: json, heading: json, banner: text, relationships: { hasMany: PageAboutBlock } }
+    PageAboutBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: PageAbout } }
+    PageRooms: { meta_title: json, meta_desc: json, header_heading: json, heading: json, text: json, banner: text }

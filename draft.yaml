@@ -84,19 +84,42 @@ models:
     content: json
 
   Feature:
-   icon: text
-   title: json
-   description: json
-   sort: integer nullable
+    icon: text
+    title: json
+    description: json
+    sort: integer nullable
 
   Cta:
-   title: json
-   subtitle: json
-   image: text
-   link: text nullable
+    title: json
+    subtitle: json
+    image: text
+    link: text nullable
 
   Gallery:
     category: json
     images: text
     sort: integer nullable
 
+  PageAbout:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    heading: json
+    banner: text
+    relationships:
+      hasMany: PageAboutBlock
+
+  PageAboutBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: PageAbout
+
+  PageRooms:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    heading: json
+    text: json
+    banner: text
