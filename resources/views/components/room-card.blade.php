@@ -1,6 +1,6 @@
 @props(['room','home','size'=>''])
 
-<a href="/" class="group {{$size}}">
+<a href="{{route('room.show',$room->slug)}}" class="group {{$size}}">
 
     <img src="{{ asset('storage/' . $room->thumbnail) }}" alt="zdjęcie przedstawiające {{ $room->title }} w Hotelu Jan w Krakowie"
         loading="lazy" 

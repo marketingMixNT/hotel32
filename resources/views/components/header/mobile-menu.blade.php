@@ -18,7 +18,7 @@
 
 <x-header.dropdown-mobile>
     @foreach ($rooms as $room)
-    <x-header.dropdown-mobile-item href="#" activeRoute='home'>{{$room->title}}</x-header.dropdown-mobile-item>
+    <x-header.dropdown-mobile-item href="{{route('room.show',$room->slug)}}" activeRoute="">{{$room->title}}</x-header.dropdown-mobile-item>
     @endforeach
   
 
