@@ -39,11 +39,11 @@ class CtaResource extends Resource
             ->schema([
                 Forms\Components\FileUpload::make('image')
                     ->label('Zdjęcie')
-                    ->directory('global-section-cta')
+                    ->directory('cta')
                     ->getUploadedFileNameForStorageUsing(
                         fn(TemporaryUploadedFile $file): string => 'cta-bg-' . now()->format('Ymd_His') . '.' . $file->getClientOriginalExtension()
                     )
-
+                    ->optimize('webp')
                     ->maxSize(8192)
                     ->columnSpanFull()
                     ->required(),

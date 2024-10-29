@@ -56,6 +56,7 @@ class PageAboutBlock extends Model
                 )
                 ->maxSize(8192)
                 ->columnSpanFull()
+                ->optimize('webp')
                 ->required(),
 
             RichEditor::make('text')

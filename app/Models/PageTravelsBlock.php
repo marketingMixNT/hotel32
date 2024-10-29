@@ -10,8 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
-
-class PageRestaurantBlock extends Model
+class PageTravelsBlock extends Model
 {
     use HasTranslations;
 
@@ -26,7 +25,7 @@ class PageRestaurantBlock extends Model
         'image',
         'text',
         'sort',
-        'page_restaurant_id',
+        'page_travels_id',
     ];
 
     /**
@@ -37,21 +36,22 @@ class PageRestaurantBlock extends Model
     protected $casts = [
         'id' => 'integer',
         'text' => 'array',
-        'page_restaurant_id' => 'integer',
+        'page_travels_id' => 'integer',
     ];
 
-    public function pageRestaurant(): BelongsTo
+    public function pageTravels(): BelongsTo
     {
-        return $this->belongsTo(PageRestaurant::class);
+        return $this->belongsTo(PageTravels::class);
     }
+
     public static function getForm(): array
     {
         return [
             FileUpload::make('image')
                 ->label('Obraz')
-                ->directory('pageRestaurant')
+                ->directory('pageTravels')
                 ->getUploadedFileNameForStorageUsing(
-                    fn(TemporaryUploadedFile $file): string => 'restauracja-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                    fn(TemporaryUploadedFile $file): string => 'podroze-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                 )
                 ->maxSize(8192)
                 ->columnSpanFull()

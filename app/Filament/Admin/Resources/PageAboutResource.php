@@ -58,6 +58,7 @@ class PageAboutResource extends Resource
                                     )
                                     ->maxSize(8192)
                                     ->columnSpanFull()
+                                    ->optimize('webp')
                                     ->required(),
 
                                 Forms\Components\TextInput::make('header_heading')

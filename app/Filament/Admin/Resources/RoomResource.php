@@ -133,7 +133,7 @@ class RoomResource extends Resource
                     ->schema([
                         Forms\Components\FileUpload::make('thumbnail')
                         ->label('Miniaturka')
-                        ->directory('apartments-thumbnails')
+                        ->directory('rooms-thumbnails')
                         ->getUploadedFileNameForStorageUsing(
                             fn(TemporaryUploadedFile $file): string => 'apartment-miniaturka' . now()->format('Ymd_His') . '.' . $file->getClientOriginalExtension()
                         )
@@ -151,7 +151,7 @@ class RoomResource extends Resource
                         ->columnSpanFull(),
                     Forms\Components\FileUpload::make('gallery')
                         ->label('Galeria')
-                        ->directory('apartments-galleries')
+                        ->directory('rooms-galleries')
                         ->getUploadedFileNameForStorageUsing(
                             fn(TemporaryUploadedFile $file): string => 'apartament-galeria-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                         )

@@ -22,7 +22,8 @@ class PrivacyPolicyResource extends Resource
 
     public static function getTranslatableLocales(): array
     {
-        return ['pl', 'en'];}
+        return ['pl', 'en'];
+    }
     protected static ?string $model = PrivacyPolicy::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
@@ -33,7 +34,7 @@ class PrivacyPolicyResource extends Resource
     {
         return $form
             ->schema([
-                    Forms\Components\FileUpload::make('banner')
+                Forms\Components\FileUpload::make('banner')
                     ->label('Banner')
                     ->directory('banner')
                     ->getUploadedFileNameForStorageUsing(
@@ -41,9 +42,10 @@ class PrivacyPolicyResource extends Resource
                     )
                     ->maxSize(8192)
                     ->columnSpanFull()
+                    ->optimize('webp')
                     ->image()
                     ->required(),
-                    Forms\Components\RichEditor::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->label('Treść')
                     ->toolbarButtons([
                         'bold',
@@ -59,8 +61,8 @@ class PrivacyPolicyResource extends Resource
                         'underline',
                         'undo',
                     ])
-                        ->required()
-                        ->columnSpanFull(),
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
