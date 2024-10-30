@@ -48,16 +48,16 @@
 <body
     style="margin: 0; width: 100%; background-color: #f8fafc; padding: 0; -webkit-font-smoothing: antialiased; word-break: break-word">
   
-    <div role="article" aria-roledescription="email" aria-label="Nowa wiadomość ze strony Hotel Jan" lang="pl">
+    <div role="article" aria-roledescription="email" aria-label="Nowa wiadomość ze strony Hotel 32" lang="pl">
         <div class="sm-px-4"
             style="background-color: #333; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
             <table align="center" cellpadding="0" cellspacing="0" role="none">
                 <tr>
                     <td style="width: 552px; max-width: 100%">
                         <div class="sm-my-8" style="margin-top: 48px; margin-bottom: 48px; text-align: center">
-                            <a href="https://jan-krakow.pl">
-                                <img src="{{ asset('assets/logo.png') }}" width="200"
-                                    alt="logo Hotel Jan" style="max-width: 100%; vertical-align: middle">
+                            <a href="https://hotel32.pl">
+                                <img src="{{ asset('assets/logo/logo.png') }}" width="200"
+                                    alt="logo Hotel 32" style="max-width: 100%; vertical-align: middle">
                             </a>
                         </div>
                         <table style="width: 100%;" cellpadding="0" cellspacing="0" role="none">
@@ -97,7 +97,7 @@
                                         style="display: flex; align-items: center; justify-content: flex-start; gap: 24px">
                                         <div>
                                             <a href="tel:{{ $phone }}"
-                                                style="color: #f8fafc; background-color: #c18b52; display: inline-block; border-radius: 4px; padding: 16px 24px; font-size: 16px; line-height: 1; font-weight: 600; text-decoration: none">
+                                                style="color: #f8fafc; background-color: #013333; display: inline-block; border-radius: 4px; padding: 16px 24px; font-size: 16px; line-height: 1; font-weight: 600; text-decoration: none">
                                                 <!--[if mso]>
       <i style="mso-font-width: 150%; mso-text-raise: 30px" hidden>&emsp;</i>
     <![endif]-->
@@ -111,7 +111,7 @@
                                         </div>
                                         <div>
                                             <a href="mailto:{{ $email }}"
-                                                style="color: #f8fafc; background-color: #c18b52; display: inline-block; border-radius: 4px; padding: 16px 24px; font-size: 16px; line-height: 1; font-weight: 600; text-decoration: none;">
+                                                style="color: #f8fafc; background-color: #013333; display: inline-block; border-radius: 4px; padding: 16px 24px; font-size: 16px; line-height: 1; font-weight: 600; text-decoration: none;">
                                                 <!--[if mso]>
       <i style="mso-font-width: 150%; mso-text-raise: 30px;" hidden>&emsp;</i>
     <![endif]-->

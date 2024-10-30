@@ -1,5 +1,6 @@
 <?php
 
+use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
@@ -15,17 +16,21 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 
-    Route::get('/', HomeController::class,)->name('home');
-    Route::get('/o-nas', [AboutController::class,'index'])->name('about');
-    Route::get('/pokoje', [RoomController::class,'index'])->name('room.index');
-    Route::get('/pokoj/{slug}', [RoomController::class,'show'])->name('room.show');
-    Route::get('/restauracja', [RestaurantController::class,'index'])->name('restaurant');
-    Route::get('/transfery-i-wycieczki', [TravelsController::class,'index'])->name('travels');
-    Route::get('/galeria', [GalleryController::class,'index'])->name('gallery');
-    Route::get('/lokalizacja', [LocalizationController::class,'index'])->name('localization');
-    Route::get('/kontakt', [ContactController::class,'index'])->name('contact');
+    Livewire::setUpdateRoute(function ($handle) {
+        return Route::post('/custom/livewire/update', $handle);
+    });
 
-    Route::get('/polityka-prywatnosci', [PrivacyPolicyController::class,'index'])->name('privacy-policy');
+    Route::get('/', HomeController::class,)->name('home');
+    Route::get(LaravelLocalization::transRoute('routes.about'), [AboutController::class,'index'])->name('about');
+    Route::get(LaravelLocalization::transRoute('routes.rooms'), [RoomController::class,'index'])->name('room.index');
+    Route::get(LaravelLocalization::transRoute('routes.room'), [RoomController::class,'show'])->name('room.show');
+    Route::get(LaravelLocalization::transRoute('routes.restaurant'), [RestaurantController::class,'index'])->name('restaurant');
+    Route::get(LaravelLocalization::transRoute('routes.transfers'), [TravelsController::class,'index'])->name('travels');
+    Route::get(LaravelLocalization::transRoute('routes.gallery'), [GalleryController::class,'index'])->name('gallery');
+    Route::get(LaravelLocalization::transRoute('routes.localization'), [LocalizationController::class,'index'])->name('localization');
+    Route::get(LaravelLocalization::transRoute('routes.contact'), [ContactController::class,'index'])->name('contact');
+
+    Route::get(LaravelLocalization::transRoute('routes.privacy-policy'), [PrivacyPolicyController::class,'index'])->name('privacy-policy');
 
     
 });

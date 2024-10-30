@@ -30,7 +30,7 @@ class ContactForm extends Component
         if (!$this->captcha > .3) {
             $this->store();
         } else {
-            return session()->flash('success',  __('contact.form.success-message'));
+            return session()->flash('success',  __('global.contact.success-message'));
         }
 
     }
@@ -62,10 +62,10 @@ class ContactForm extends Component
         ], function ($message) {
             $message->from(env('MAIL_USERNAME'))
                 ->to(env('MAIL_TO'))
-                ->subject('Nowa wiadomość ze strony Hotel Jan');
+                ->subject('Nowa wiadomość ze strony Hotel 32');
         });
 
-        $this->successMessage =  __('contact.form.success-message');
+        $this->successMessage =  __('global.contact.success-message');
 
         $this->resetForm();
 
