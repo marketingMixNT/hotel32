@@ -28,7 +28,7 @@ class PrivacyPolicyResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Strony Informacyjne';
+    protected static ?string $navigationGroup = 'Strony informacyjne';
 
     public static function form(Form $form): Form
     {

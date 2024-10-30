@@ -8,6 +8,7 @@ use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Illuminate\Support\Facades\Blade;
+use Filament\Navigation\NavigationGroup;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Support\Facades\FilamentView;
 use Filament\SpatieLaravelTranslatablePlugin;
@@ -62,6 +63,40 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->navigationGroups([
+                NavigationGroup::make()
+                    ->label('Strona główna')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Galeria')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Kontakt')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Lokalizacja')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('O nas')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Restauracja')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Pokoje')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Transfery i wycieczki')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Sekcje globalne')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Strony informacyjne')
+                    ->collapsed(),
+                
+         
             ])
              ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(['pl', 'en']),);
     }

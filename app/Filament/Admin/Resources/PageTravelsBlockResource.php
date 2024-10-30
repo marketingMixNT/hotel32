@@ -29,7 +29,7 @@ class PageTravelsBlockResource extends Resource
     protected static ?string $model = PageTravelsBlock::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Podróże i transfery';
+    protected static ?string $navigationGroup = 'Transfery i wycieczki';
 
     public static function form(Form $form): Form
     {

@@ -6,9 +6,10 @@
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
 
-<meta name="keywords" content="">
+<meta name="keywords" content="Hotel w Krakowie, noclegi Kraków, apartamenty Kraków, pokoje hotelowe, rezerwacje hoteli, turystyka Kraków, komfortowe noclegi, wypoczynek w Krakowie, usługi hotelowe, atrakcje Kraków">
 
-<meta name="author" content="">
+
+<meta name="author" content="Hotel 32">
 
 @if ($noFollow)
 <meta name="robots" content="noindex, nofollow">
@@ -20,6 +21,6 @@
 
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $description }}">
-<meta property="og:url" content="">
+<meta property="og:url" content="https://hotel32.pl">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{asset('')}}">
+<meta property="og:image" content="{{asset('assets/images/rooms/deluxe/deluxe-4.webp')}}">

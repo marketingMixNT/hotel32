@@ -34,7 +34,7 @@ class PageTravelsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
-    protected static ?string $navigationGroup = 'Podróże i transfery';
+    protected static ?string $navigationGroup = 'Transfery i wycieczki';
 
     public static function form(Form $form): Form
     {
