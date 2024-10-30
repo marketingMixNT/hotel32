@@ -12,6 +12,7 @@ use App\Models\PageRooms;
 use App\Models\PageGallery;
 use App\Models\PageTravels;
 use App\Models\PageAboutBlock;
+use App\Models\PageContact;
 use App\Models\PageRestaurant;
 use App\Observers\CtaObserver;
 use App\Observers\HomeObserver;
@@ -28,6 +29,7 @@ use App\Observers\PageGalleryObserver;
 use App\Observers\PageTravelsObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\PageAboutBlockObserver;
+use App\Observers\PageContactObserver;
 use App\Observers\PageRestaurantObserver;
 use App\Observers\PageLocalizationObserver;
 use App\Observers\PageTravelsBlockObserver;
@@ -70,5 +72,7 @@ class AppServiceProvider extends ServiceProvider
 
         PageLocalization::observe(PageLocalizationObserver::class);
         PageLocalizationBlock::observe(PageLocalizationBlockObserver::class);
+
+        PageContact::observe(PageContactObserver::class);
     }
 }

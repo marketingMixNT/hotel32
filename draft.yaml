@@ -177,3 +177,10 @@ models:
     sort: integer nullable
     relationships:
       belongsTo: PageLocalization
+
+  PageContact:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
+    heading: json

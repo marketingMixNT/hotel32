@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ctas', function (Blueprint $table) {
+        Schema::create('page_contacts', function (Blueprint $table) {
             $table->id();
-            $table->json('title');
-            $table->json('subtitle');
-            $table->text('image');
+            $table->json('meta_title');
+            $table->json('meta_desc');
+            $table->json('header_heading');
+            $table->text('banner');
+            $table->json('heading');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ctas');
+        Schema::dropIfExists('page_contacts');
     }
 };

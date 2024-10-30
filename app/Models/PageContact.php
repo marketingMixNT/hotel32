@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
 
-class Cta extends Model
+class PageContact extends Model
 {
     use HasTranslations;
 
@@ -19,9 +19,11 @@ class Cta extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'subtitle',
-        'image',
+        'meta_title',
+        'meta_desc',
+        'header_heading',
+        'banner',
+        'heading',
     ];
 
     /**
@@ -31,9 +33,16 @@ class Cta extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'title' => 'array',
-        'subtitle' => 'array',
+        'meta_title' => 'array',
+        'meta_desc' => 'array',
+        'header_heading' => 'array',
+        'heading' => 'array',
     ];
-    public $translatable = ['title', 'subtitle'];
 
+    public $translatable = [
+        'meta_title',
+        'meta_desc',
+        'header_heading',
+        'heading',
+    ];
 }

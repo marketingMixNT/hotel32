@@ -3,6 +3,8 @@
     <x-layouts.app-wrapper :home="$home" :rooms="$rooms">
 
         @include('pages.home.partials.hero-slider')
+
+
         @include('pages.home.partials.rooms')
         @include('pages.home.partials.features')
         @include('pages.home.partials.about')

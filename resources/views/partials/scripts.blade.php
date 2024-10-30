@@ -1,4 +1,4 @@
-<script src="https://wis.upperbooking.com/hotel32krakowoldtown/booking?locale=pl" async></script>
+<script src="https://wis.upperbooking.com/hotel32krakowoldtown/booking?locale=pl"async=""></script>
 
 <script>
     var _smartsupp = _smartsupp || {};

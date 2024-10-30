@@ -60,11 +60,7 @@ class CtaResource extends Resource
                             ->columnSpanFull()
                             ->required(),
                     ]),
-                Forms\Components\TextInput::make('link')
-                    ->label('Link do rezerwacji')
-                    ->columnSpanFull()
-                    ->hint("Link do rezerwacji jest dopasowany automatycznie do strony. Jeżeli chcesz mieć własny dodaj go tutaj.")
-                    ->url(),
+              
             ]);
     }
 

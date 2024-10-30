@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TravelsController;
 use App\Http\Controllers\RestaurantController;
@@ -21,6 +22,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/transfery-i-wycieczki', [TravelsController::class,'index'])->name('travels');
     Route::get('/galeria', [GalleryController::class,'index'])->name('gallery');
     Route::get('/lokalizacja', [LocalizationController::class,'index'])->name('localization');
+    Route::get('/kontakt', [ContactController::class,'index'])->name('contact');
 
     
 });
