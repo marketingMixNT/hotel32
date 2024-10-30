@@ -48,14 +48,7 @@ class PageRestaurantBlockResource extends Resource
 
             RichEditor::make('text')
                 ->label('Tekst')
-                ->disableToolbarButtons([
-                    'blockquote',
-                    'strike',
-                    'codeBlock',
-                    'h2',
-                    'h3',
-
-                ])
+                
                 ->required()
                 ->columnSpanFull(),
         ]);

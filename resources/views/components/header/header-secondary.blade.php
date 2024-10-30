@@ -11,7 +11,7 @@
         {{-- links --}}
         <x-header.desktop-nav-links :rooms="$rooms"/>
 
-        <x-link-btn href="{{$home->booking_link}}">Zarezerwuj</x-link-btn>
+        <x-link-btn href="{{$home->booking_link}}">{{__('global.book')}}</x-link-btn>
     </div>
 
 

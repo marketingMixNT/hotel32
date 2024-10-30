@@ -9,6 +9,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TravelsController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\PrivacyPolicyController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -23,6 +24,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/galeria', [GalleryController::class,'index'])->name('gallery');
     Route::get('/lokalizacja', [LocalizationController::class,'index'])->name('localization');
     Route::get('/kontakt', [ContactController::class,'index'])->name('contact');
+
+    Route::get('/polityka-prywatnosci', [PrivacyPolicyController::class,'index'])->name('privacy-policy');
 
     
 });

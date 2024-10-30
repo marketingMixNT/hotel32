@@ -65,7 +65,7 @@
             <hr class="opacity-40" />
             <ul class="flex justify-center items-center gap-8 text-xs py-4">
                 <li>
-                    <a href="/" class="link-hover font-light">   {{__('footer.privacy-policy')}}</a>
+                    <a href="{{route('privacy-policy')}}" class="link-hover font-light">   {{__('footer.privacy-policy')}}</a>
                 </li>
                 {{-- <li><a href="{{route('regulations')}}" class="link-hover font-light">    {{__('footer.regulations')}}</a></li> --}}
             </ul>

@@ -7,8 +7,11 @@ use Filament\Tables;
 use Filament\Forms\Form;
 use App\Models\PageRooms;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Tabs;
+use Livewire\Component as Livewire;
+use Filament\Forms\Components\Component;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Resources\Concerns\Translatable;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -16,8 +19,6 @@ use App\Filament\Admin\Resources\PageRoomsResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Schmeits\FilamentCharacterCounter\Forms\Components\TextInput;
 use App\Filament\Admin\Resources\PageRoomsResource\RelationManagers;
-use Livewire\Component as Livewire;
-use Filament\Forms\Components\Component;
 
 
 
@@ -128,6 +129,14 @@ class PageRoomsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('banner')
+                ->label('Banner'),
+
+            Tables\Columns\TextColumn::make('header_heading')
+                ->label('Nagłowek')
+                ->description(function (PageRooms $record) {
+                    return Str::limit(strip_tags($record->heading), 40);
+                }),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

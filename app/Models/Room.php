@@ -57,11 +57,10 @@ class Room extends Model
         'title',
         'slug',
         'beds',
-        'bathroom',
+        'bathrooms',
         'short_desc',
         'desc',
         'equipment',
-        'reservation_link'
     ];
 
     public function getMetaTitle(): string

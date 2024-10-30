@@ -10,3 +10,6 @@
 <x-mobile-buttons :home="$home" />
 
 <x-scroll-to-top />
+
+<script src="{{$home->booking_script}}{{ str_replace('_', '-', app()->getLocale()) }}"
+    async></script>

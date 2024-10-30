@@ -14,7 +14,7 @@ class ListPageLocalizationBlocks extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\LocaleSwitcher::make(),
         ];
     }
 }

@@ -6,7 +6,7 @@
         <div class="overflow-hidden">
 
             <img src=" {{ asset('/storage/' . $room->thumbnail) }}"
-                alt="Zdjęcie apartamentu {{ $room->title }} w hotelu Jan w Krakowie" loading="lazy"
+                alt="Zdjęcie pokoju {{ $room->title }} w hotelu {{$home->title}}" loading="lazy"
                 class="w-full h-[350px] object-cover">
         </div>
     </div>

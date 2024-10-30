@@ -49,7 +49,7 @@
 
 
                             <img src="{{asset('/storage/' . $room->thumbnail)}}"
-                                alt="zdjęcie przedstawiające apartament {{$room->title}} w Hotelu Jan w Krakowie"
+                                alt="zdjęcie przedstawiające pokoj {{$room->title}} w {{$home->title}}"
                                 loading="lazy" class="aspect-[3/2] shadow-md">
 
                         </div>
@@ -74,7 +74,7 @@
 
                         @foreach (collect($room->gallery)->slice(0, 3) as $img)
                         <img src="{{ asset('storage/' . $img) }}"
-                            alt="zdjęcie przedstawiające {{ $room->title }} w Hotelu Jan w Krakowie"
+                            alt="zdjęcie przedstawiające pokoj {{$room->title}} w {{$home->title}}"
                             class="w-full  aspect-square max-h-[500px] object-cover shadow-md" loading="lazy">
                         @endforeach
 
@@ -115,7 +115,7 @@
                     <a href="{{ asset('storage/' . $img) }}" class=" swiper-slide glightbox">
 
                         <img src="{{ asset('storage/' . $img) }}"
-                            alt="zdjęcie przedstawiające  {{ $room->title }} w Hotelu Jan w Krakowie"
+                            alt="zdjęcie przedstawiające pokoj {{$room->title}} w {{$home->title}}"
                             class=" h-full w-full object-cover aspect-square shadow-md" loading="lazy">
                     </a>
                     @endforeach

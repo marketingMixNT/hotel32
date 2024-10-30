@@ -26,7 +26,7 @@
 
                     <x-text-image-block 
                     img="{{ asset('storage/' . $block->image) }}" 
-                    alt="" 
+                    alt="zdjęcie przedstawiające miasto {{$home->city}}" 
                     mirrorLook="{{ $loop->iteration % 2 == 0 }}"
                 >
                     {!! $block->text !!}

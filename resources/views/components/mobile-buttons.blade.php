@@ -3,22 +3,22 @@
 
     <x-mobile-button-item href="{{$home->booking_link}}" target="_blank">
         <x-lucide-pointer class="size-5  text-fontDark" />
-        <span class="text-xs uppercase  text-fontDark">Zarezerwuj</span>
+        <span class="text-xs uppercase  text-fontDark">{{__('global.mobile-buttons.booking')}}</span>
     </x-mobile-button-item>
 
-    <x-mobile-button-item href="">
+    <x-mobile-button-item href="{{route('gallery')}}">
         <x-lucide-images class="size-5  text-fontLight" />
-        <span class="text-xs uppercase  text-fontLight">Galeria</span>
+        <span class="text-xs uppercase  text-fontLight">{{__('global.mobile-buttons.gallery')}}</span>
     </x-mobile-button-item>
 
-    <x-mobile-button-item href="{{$home->phone}}">
+    <x-mobile-button-item href="tel:+48{{$home->phone}}">
         <x-lucide-phone class="size-5  text-fontLight" />
-        <span class="text-xs uppercase  text-fontLight">Zadzwoń</span>
+        <span class="text-xs uppercase  text-fontLight">{{__('global.mobile-buttons.phone')}}</span>
     </x-mobile-button-item>
 
     <x-mobile-button-item href="{{$home->map_link}}" target="_blank">
         <x-lucide-map-pin class="size-5 text-fontLight" />
-        <span class="text-xs uppercase  text-fontLight">Lokalizacja</span>
+        <span class="text-xs uppercase  text-fontLight">{{__('global.mobile-buttons.localization')}}</span>
     </x-mobile-button-item>
 
 </nav>

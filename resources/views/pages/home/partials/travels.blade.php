@@ -10,7 +10,7 @@
                 <div class="w-full lg:h-[60%] overflow-hidden ">
                     <div class="w-full h-full object-cover  ">
                         <img src="{{asset('storage/' . $home->travel_images[0] )}}"
-                            alt="widok krakowskiej ulicy"
+                            alt="widok miasta {{$home->city}}"
                             class="w-full h-full object-cover shadow-md aspect-[3/2] max-w-[600px] mx-auto" loading="lazy" width="420"
                             height="480">
                     </div>
@@ -20,7 +20,7 @@
                     class="pt-12 sm:mt-0 self-center sm:self-end flex flex-col justify-center sm:justify-end items-center sm:items-end gap-3 mb-12 sm:mb-24 lg:mb-12 ">
 
 
-                    <x-link href="/" title="{{__('global.travel-link')}}" aria="Lokalne atrakcje"/>
+                    <x-link href="{{route('travels')}}" title="{{__('global.travel-link')}}" aria="Lokalne atrakcje"/>
                 </div>
             </div>
 
@@ -36,14 +36,14 @@
 
           
                 </div>
-                <img src="{{asset('storage/' . $home->travel_images[1] )}}" alt="dwidok na krakowski diabelski młyn"
+                <img src="{{asset('storage/' . $home->travel_images[1] )}}" alt=" widok miasta {{$home->city}}"
                     class=" w-full object-cover shadow-md  aspect-[3/2] max-w-[600px] mx-auto" loading="lazy" width="430" height="320">
             </div>
             <div class="flex flex-col justify-start w-full mx-auto ">
                 <div class="lg:h-[80%] w-full overflow-hidden lg:mt-6 ">
                     <div class="h-full w-full object-cover ">
                         <img src="{{asset('storage/' . $home->travel_images[2] )}}"
-                            alt=""
+                            alt=" widok miasta {{$home->city}}"
                             class="w-full h-full object-cover shadow-md  aspect-[3/2] lg:aspect-auto max-w-[600px] mx-auto" loading="lazy">
                     </div>
                 </div>

@@ -22,7 +22,7 @@
                         {{-- "All" Button --}}
                         <button class="border   px-8 py-3 uppercase text-xs duration-300 bg-primary-400   text-fontLight   gallery-btn filter-btn"
                             data-title="">
-                            {{__('gallery.all')}}
+                            {{__('global.all')}}
                         </button>
     
                         {{-- Buttons to filter by title --}}

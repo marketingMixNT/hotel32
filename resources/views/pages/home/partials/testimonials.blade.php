@@ -16,7 +16,7 @@
         @endif
 
         @if(!is_null($home->tripadvisor_reviews) )
-        <x-rating source="tripAdvisor" rate="{{$home->tripadvisor_reviews_average}}" href="{{$home->tripadvisor_links}}" reviews="{{$home->tripadvisor_reviews}} {{__('home.testimonials.reviews')}}" />
+        <x-rating source="tripAdvisor" rate="{{$home->tripadvisor_reviews_average}}" href="{{$home->tripadvisor_links}}" reviews="{{$home->tripadvisor_reviews}} {{__('global.reviews')}}" />
     @endif
                 
           

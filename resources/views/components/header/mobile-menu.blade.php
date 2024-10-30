@@ -5,7 +5,7 @@
 
         {{-- close --}}
         <div class="flex justify-end">
-            <button id="closeMenu" class="border border-white p-2 rounded-full cursor-pointer group">
+            <button id="closeMenu" class="border border-white p-2 rounded-full cursor-pointer group" aria-label="Zamknij menu">
                 <img src="{{asset('assets/icons/close.svg')}}" alt=""
                     class="size-10 group-hover:rotate-90 duration-300">
             </button>
@@ -13,10 +13,10 @@
 
         <nav>
             <ul class="flex flex-col justify-start items-start gap-5 pl-6">
-                <x-header.nav-item href="{{route('about')}}" activeRoute="about">O nas</x-header.nav-item>
+                <x-header.nav-item href="{{route('about')}}" activeRoute="about">{{__('global.nav.1')}}</x-header.nav-item>
                
 
-<x-header.dropdown-mobile>
+<x-header.dropdown-mobile title="{{__('global.nav.2')}}">
     @foreach ($rooms as $room)
     <x-header.dropdown-mobile-item href="{{route('room.show',$room->slug)}}" activeRoute="">{{$room->title}}</x-header.dropdown-mobile-item>
     @endforeach
@@ -25,11 +25,11 @@
 </x-header.dropdown-mobile>
 
            
-                <x-header.nav-item href="{{route('restaurant')}}" activeRoute='restaurant'>Restauracja</x-header.nav-item>
-                <x-header.nav-item href="{{route('travels')}}" activeRoute='travels'>Transfery i wycieczki</x-header.nav-item>
-                <x-header.nav-item href="{{route('gallery')}}" activeRoute='gallery'>Galeria</x-header.nav-item>
-                <x-header.nav-item href="{{route('localization')}}" activeRoute='localization'>Lokalizacja</x-header.nav-item>
-                <x-header.nav-item href="{{route('contact')}}" activeRoute='contact'>Kontakt</x-header.nav-item>
+                <x-header.nav-item href="{{route('restaurant')}}" activeRoute='restaurant'>{{__('global.nav.3')}}</x-header.nav-item>
+                <x-header.nav-item href="{{route('travels')}}" activeRoute='travels'>{{__('global.nav.4')}}</x-header.nav-item>
+                <x-header.nav-item href="{{route('gallery')}}" activeRoute='gallery'>{{__('global.nav.5')}}</x-header.nav-item>
+                <x-header.nav-item href="{{route('localization')}}" activeRoute='localization'>{{__('global.nav.6')}}</x-header.nav-item>
+                <x-header.nav-item href="{{route('contact')}}" activeRoute='contact'>{{__('global.nav.7')}}</x-header.nav-item>
             </ul>
         </nav>
     </div>

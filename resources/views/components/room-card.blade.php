@@ -2,7 +2,7 @@
 
 <a href="{{route('room.show',$room->slug)}}" class="group {{$size}}">
 
-    <img src="{{ asset('storage/' . $room->thumbnail) }}" alt="zdjęcie przedstawiające {{ $room->title }} w Hotelu Jan w Krakowie"
+    <img src="{{ asset('storage/' . $room->thumbnail) }}" alt="zdjęcie przedstawiające {{ $room->title }} w {{$home->title}}"
         loading="lazy" 
         class="aspect-square object-cover w-full group-hover:scale-110 duration-300">
 
