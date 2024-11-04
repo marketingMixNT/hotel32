@@ -22,7 +22,7 @@
                                 <a class="link-hover--dark text-xl font-light" href="mailto:{{$home->mail}}">{{$home->mail}}</a>
                             </x-contact-box>
                     
-                            <x-contact-box title="{{__('contact.phone')}}">
+                            <x-contact-box title="{{__('global.contact.phone')}}">
                                 <a class="link-hover--dark text-xl font-light mb-2" href="tel:+48 {{$home->phone}}">+48 {{$home->phone}}</a>
                                 @if ($home->phone_second)
                                 <a class="link-hover--dark text-xl font-light" href="tel:+48{{$home->phone_second}}">+48 {{$home->phone_second}}</a>
@@ -33,7 +33,7 @@
                             
                             </x-contact-box>
                     
-                            <x-contact-box title="{{__('contact.address')}}">
+                            <x-contact-box title="{{__('global.contact.address')}}">
                                 <a class="link-hover--dark text-xl font-light" href="{{$home->map_link}}">{{$home->address}}<br>{{$home->city}}</a>
                             </x-contact-box>
                     

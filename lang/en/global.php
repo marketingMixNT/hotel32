@@ -37,6 +37,7 @@
 "contact"=>[
     'name'=>"Full name",
     "phone"=>"Phone",
+    "address"=>"Address",
     "message"=>"Message",
     "send"=>"Send",
     'email-error'=>"The email field is not a valid email address.",

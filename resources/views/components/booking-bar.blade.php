@@ -1,2 +1,3 @@
+@props(['class'=>''])
 
-<div id="wis2-panel" class="js-wis2-panel  booking-panel " {{$attributes}}></div>
+<div class="{{$class}} be-panel " {{$attributes}}></div>

@@ -1,7 +1,7 @@
 @props(['cta'])
 
 <section>
-    <div class="relative  flex flex-col justify-center items-center gap-6 w-full sm:min-h-[600px] md:gap-12  px-6 md:px-12 py-20   bg-no-repeat bg-cover bg-center bg-blend-multiply bg-gray-500 text-fontLight"
+    <div class="relative  flex flex-col justify-center items-center gap-6 w-full sm:min-h-[600px] md:gap-12  px-6 md:px-12 py-20   bg-no-repeat bg-cover bg-center bg-blend-multiply bg-gray-400 text-fontLight"
         style="background-image: url('{{ asset('storage/' .$cta->image) }}')">
         {{-- text --}}
         <div class="max-w-screen-xl text-center  space-y-12">

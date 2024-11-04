@@ -38,6 +38,7 @@
     "contact"=>[
         'name'=>"Imię i nazwisko",
         "phone"=>"Telefon",
+        "address"=>"Adres",
         "message"=>"Wiadomość",
         "send"=>"Wyślij",
         'email-error'=>"Pole adres e-mail nie jest poprawnym adresem e-mail.",
