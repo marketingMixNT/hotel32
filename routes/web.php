@@ -32,5 +32,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Route::get(LaravelLocalization::transRoute('routes.privacy-policy'), [PrivacyPolicyController::class,'index'])->name('privacy-policy');
 
-    
+    Route::fallback(function () {
+        return redirect('/');
+    });
 });
