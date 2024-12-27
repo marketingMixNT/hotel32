@@ -17,6 +17,8 @@ class ListPageAboutBlocks extends ListRecords
         return [
             
             Actions\LocaleSwitcher::make(),
+            Actions\CreateAction::make()
+
         ];
     }
 }

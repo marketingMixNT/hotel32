@@ -16,6 +16,7 @@ class ListPageRestaurantBlocks extends ListRecords
     {
         return [
             Actions\LocaleSwitcher::make(),
+            Actions\CreateAction::make()
         ];
     }
 }

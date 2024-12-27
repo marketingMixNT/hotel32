@@ -18,7 +18,11 @@ class AboutController extends Controller
 
         $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
 
-        $about = PageAbout::with("pageAboutBlocks")->first();
+        // $about = PageAbout::with("pageAboutBlocks")->first();
+
+        $about = PageAbout::with(['pageAboutBlocks' => function ($query) {
+            $query->orderBy('sort', 'asc');
+         }])->first();
 
         return view('pages.about.index', compact('home', 'about','rooms'));
     }

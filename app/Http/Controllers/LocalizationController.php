@@ -18,7 +18,11 @@ class LocalizationController extends Controller
 
         $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
 
-        $pageLocalization = PageLocalization::with("pageLocalizationBlocks")->first();
+        // $pageLocalization = PageLocalization::with("pageLocalizationBlocks")->first();
+
+        $pageLocalization = PageLocalization::with(['pageLocalizationBlocks' => function ($query) {
+            $query->orderBy('sort', 'asc');
+         }])->first();
 
         return view('pages.localization.index', compact('home', 'pageLocalization','rooms'));
     }

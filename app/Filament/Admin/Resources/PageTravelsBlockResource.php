@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use App\Models\PageTravelsBlock;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -56,6 +57,17 @@ class PageTravelsBlockResource extends Resource
                 ])
                 ->required()
                 ->columnSpanFull(),
+
+                Select::make('page_travels_id')
+                ->label('id strony')
+                ->columns(1)
+                ->relationship('pageTravels', 'id')
+                ->required()
+       
+                ->default(function () {
+                   
+                    return \App\Models\PageTravels::first()->id ?? null;
+                }),
         ]);
     }
 
@@ -63,7 +75,7 @@ class PageTravelsBlockResource extends Resource
     {
         return $table
             ->reorderable('sort')
-            ->defaultSort('sort', 'desc')
+            ->defaultSort('sort', 'asc')
             ->columns([
                 Tables\Columns\TextColumn::make('sort')
                     ->label('#')

@@ -79,19 +79,19 @@ class PageLocalizationResource extends Resource
                                 ->columnSpanFull(),
 
                                
-                                    Repeater::make('pageLocalizationBlocks')
-                                        ->schema(PageLocalizationBlock::getForm())
-                                        ->label('')
-                                        ->relationship()
-                                        ->columnSpanFull()
-                                        ->reorderable()
-                                        ->addActionLabel('Dodaj blok')
-                                        ->collapsed()
-                                        ->collapsible()
-                                        ->defaultItems(0),
+                                    // Repeater::make('pageLocalizationBlocks')
+                                    //     ->schema(PageLocalizationBlock::getForm())
+                                    //     ->label('')
+                                    //     ->relationship()
+                                    //     ->columnSpanFull()
+                                    //     ->reorderable()
+                                    //     ->addActionLabel('Dodaj blok')
+                                    //     ->collapsed()
+                                    //     ->collapsible()
+                                    //     ->defaultItems(0),
 
                                         Shout::make('info')
-                                        ->content('Aby przetłumaczyć bloki przejdź do dedykowanej zakładki.')
+                                        ->content('Aby dodać bloki przejdź do dedykowanej zakładki.')
                                         ->type('info')
                                         ->columnSpanFull()
                                         ->color('info'),

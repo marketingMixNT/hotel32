@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use App\Models\PageAboutBlock;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,6 +58,17 @@ class PageAboutBlockResource extends Resource
                     ])
                     ->required()
                     ->columnSpanFull(),
+
+                    Select::make('page_about_id')
+                ->label('id strony')
+                ->columns(1)
+                ->relationship('pageAbout', 'id')
+                ->required()
+       
+                ->default(function () {
+                   
+                    return \App\Models\PageAbout::first()->id ?? null;
+                }),
             ]);
     }
 
@@ -64,7 +76,7 @@ class PageAboutBlockResource extends Resource
     {
         return $table
             ->reorderable('sort')
-            ->defaultSort('sort', 'desc')
+            ->defaultSort('sort', 'asc')
             ->columns([
                 Tables\Columns\TextColumn::make('sort')
                     ->label('#')

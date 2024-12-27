@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use App\Models\PageLocalizationBlock;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,6 +58,17 @@ class PageLocalizationBlockResource extends Resource
                 ])
                 ->required()
                 ->columnSpanFull(),
+
+                Select::make('page_localization_id')
+                ->label('id strony')
+                ->columns(1)
+                ->relationship('pageLocalization', 'id')
+                ->required()
+       
+                ->default(function () {
+                   
+                    return \App\Models\PageLocalization::first()->id ?? null;
+                }),
         ]);
     }
 

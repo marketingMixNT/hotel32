@@ -18,7 +18,10 @@ class RestaurantController extends Controller
 
         $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
 
-        $pageRestaurant = PageRestaurant::with("pageRestaurantBlocks")->first();
+
+        $pageRestaurant = PageRestaurant::with(['pageRestaurantBlocks' => function ($query) {
+                $query->orderBy('sort', 'asc');
+             }])->first();
 
         return view('pages.restaurant.index', compact('home', 'pageRestaurant','rooms'));
     }

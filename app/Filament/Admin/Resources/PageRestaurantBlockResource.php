@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use App\Models\PageRestaurantBlock;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -51,6 +52,17 @@ class PageRestaurantBlockResource extends Resource
                 
                 ->required()
                 ->columnSpanFull(),
+
+                Select::make('page_restaurant_id')
+                ->label('id strony')
+                ->columns(1)
+                ->relationship('pageRestaurant', 'id')
+                ->required()
+       
+                ->default(function () {
+                   
+                    return \App\Models\PageRestaurant::first()->id ?? null;
+                }),
         ]);
     }
 
@@ -58,7 +70,7 @@ class PageRestaurantBlockResource extends Resource
     {
         return $table
         ->reorderable('sort')
-        ->defaultSort('sort', 'desc')
+        ->defaultSort('sort', 'asc')
         ->columns([
             Tables\Columns\TextColumn::make('sort')
                 ->label('#')

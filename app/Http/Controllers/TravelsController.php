@@ -18,8 +18,17 @@ class TravelsController extends Controller
 
         $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
 
-        $pageTravels = PageTravels::with("pageTravelsBlocks")->first();
+        // $pageTravels = PageTravels::with("pageTravelsBlocks")->first();
 
-        return view('pages.travels.index', compact('home', 'pageTravels','rooms'));
+
+
+        $pageTravels = PageTravels::with(['pageTravelsBlocks' => function ($query) {
+            $query->orderBy('sort', 'asc');
+        }])->first();
+
+
+        
+
+        return view('pages.travels.index', compact('home', 'pageTravels', 'rooms'));
     }
 }

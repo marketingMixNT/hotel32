@@ -80,16 +80,16 @@ class PageRestaurantResource extends Resource
                                 ->columnSpanFull(),
 
                                
-                                    Repeater::make('pageRestaurantBlocks')
-                                        ->schema(PageRestaurantBlock::getForm())
-                                        ->label('')
-                                        ->relationship()
-                                        ->columnSpanFull()
-                                        ->reorderable()
-                                        ->addActionLabel('Dodaj blok')
-                                        ->collapsed()
-                                        ->collapsible()
-                                        ->defaultItems(0),
+                                    // Repeater::make('pageRestaurantBlocks')
+                                    //     ->schema(PageRestaurantBlock::getForm())
+                                    //     ->label('')
+                                    //     ->relationship()
+                                    //     ->columnSpanFull()
+                                    //     ->reorderable()
+                                    //     ->addActionLabel('Dodaj blok')
+                                    //     ->collapsed()
+                                    //     ->collapsible()
+                                    //     ->defaultItems(0),
 
                                         Shout::make('info')
                                         ->content('Aby przetłumaczyć bloki przejdź do dedykowanej zakładki.')
